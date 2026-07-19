@@ -201,6 +201,13 @@ export default function Home() {
             Portofolio ini menampilkan berbagai proyek, karya, dan pengalaman
             saya dalam belajar serta mengembangkan teknologi.
           </p>
+          <div className="hero-preview-card">
+            <img
+              src="/og-image.png"
+              alt="Screenshot of Dzamfbr portfolio"
+              className="hero-preview-image"
+            />
+          </div>
           <a href="#about" className="hero-cta-link">
             Lihat Aku ➔
           </a>
