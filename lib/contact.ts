@@ -49,15 +49,60 @@ export function validateContactForm(
 
 // Build HTML content for the notification email sent to the portfolio owner.
 export function getNotificationEmailHtml(values: ContactFormData) {
+  const portfolioUrl = process.env.SITE_URL ?? "https://dzamfbr.vercel.app";
+  const submittedAt = new Date().toLocaleString("id-ID", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Jakarta",
+  });
+
   return `
-    <div style="font-family: Arial, sans-serif; color: #111; line-height: 1.5;">
-      <h2 style="margin:0 0 1rem;">New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${escapeHtml(values.name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(values.email)}</p>
-      <p><strong>Subject:</strong> ${escapeHtml(values.subject)}</p>
-      <p><strong>Message:</strong></p>
-      <div style="white-space: pre-wrap; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #f8fafc; color: #111;">
-        ${escapeHtml(values.message)}
+    <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto; color: #111827; line-height: 1.6;">
+      <div style="border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; background: #ffffff;">
+        <div style="padding: 24px 28px; background: linear-gradient(90deg, #111827 0%, #1f2937 100%); color: #ffffff;">
+          <h2 style="margin: 0 0 8px; font-size: 22px;">New Portfolio Inquiry</h2>
+          <p style="margin: 0; font-size: 14px; color: #d1d5db;">A new message has been submitted through your portfolio website.</p>
+        </div>
+
+        <div style="padding: 28px;">
+          <h3 style="margin: 0 0 16px; font-size: 16px; color: #111827;">Contact Information</h3>
+
+          <div style="display: grid; gap: 12px; margin-bottom: 20px;">
+            <div>
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280;">Name</div>
+              <div style="font-size: 15px; color: #111827;">${escapeHtml(values.name)}</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280;">Email</div>
+              <div style="font-size: 15px; color: #111827;">${escapeHtml(values.email)}</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280;">Subject</div>
+              <div style="font-size: 15px; color: #111827;">${escapeHtml(values.subject)}</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280;">Submitted At</div>
+              <div style="font-size: 15px; color: #111827;">${escapeHtml(submittedAt)} WIB</div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; margin-bottom: 20px;">
+            <h3 style="margin: 0 0 10px; font-size: 16px; color: #111827;">Message</h3>
+            <div style="white-space: pre-wrap; padding: 16px; border-radius: 12px; background: #f9fafb; color: #111827; border: 1px solid #e5e7eb;">
+              ${escapeHtml(values.message)}
+            </div>
+          </div>
+
+          <p style="margin: 0 0 8px; font-size: 14px; color: #4b5563;">Reply directly to this email to respond to ${escapeHtml(values.name)}.</p>
+          <p style="margin: 0; font-size: 14px; color: #4b5563;">
+            Portfolio<br />
+            <a href="${portfolioUrl}" style="color: #2563eb; text-decoration: none;">${portfolioUrl}</a>
+          </p>
+        </div>
       </div>
     </div>
   `;
@@ -65,6 +110,8 @@ export function getNotificationEmailHtml(values: ContactFormData) {
 
 // Build a simple autoresponder email for the visitor.
 export function getAutoReplyEmailHtml(name: string) {
+  const portfolioUrl = process.env.SITE_URL ?? "https://dzamfbr.vercel.app";
+
   return `
     <div style="font-family: Arial, sans-serif; color: #111; line-height: 1.6;">
       <p>Hi ${escapeHtml(name)},</p>
@@ -72,7 +119,7 @@ export function getAutoReplyEmailHtml(name: string) {
       <p>I have successfully received your message and will review it as soon as possible.</p>
       <p>I'll get back to you as soon as I can.</p>
       <p>Best regards,</p>
-      <p><strong>Dimas Azzam</strong><br />Frontend Developer<br /><a href="${process.env.SITE_URL ?? "https://your-domain.com"}" style="color: #2563eb; text-decoration: none;">${process.env.SITE_URL ?? "https://your-domain.com"}</a></p>
+      <p><strong>Dimas Azzam</strong><br />Frontend Developer<br /><a href="${portfolioUrl}" style="color: #2563eb; text-decoration: none;">${portfolioUrl}</a></p>
     </div>
   `;
 }
