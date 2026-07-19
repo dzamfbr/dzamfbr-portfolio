@@ -5,9 +5,6 @@ const siteUrl = "https://dzamfbr.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  verification: {
-    google: "8JH4wtQG9lL6ChQ37hgPrrYi9uVAkmJXCXCOQYaNSRI",
-  },
   title: {
     default:
       "Dzamfbr — Portfolio of a Web Developer & Programmer based in Indonesia.",
@@ -97,6 +94,10 @@ export default function RootLayout({
   return (
     <html lang="id" data-theme="light" className="h-full antialiased">
       <head>
+        <meta
+          name="google-site-verification"
+          content="8JH4wtQG9lL6ChQ37hgPrrYi9uVAkmJXCXCOQYaNSRI"
+        />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
