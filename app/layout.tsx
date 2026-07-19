@@ -58,7 +58,6 @@ export const metadata: Metadata = {
     title: "Dzamfbr | Dimas Azzam - Portfolio Web Developer Indonesia",
     description:
       "Portfolio resmi Dzamfbr dan Dimas Azzam sebagai Web Developer Indonesia.",
-    images: [`${siteUrl}/og-image.png`],
   },
   icons: {
     icon: "/logo_dzamfbr.png",

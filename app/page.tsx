@@ -201,13 +201,6 @@ export default function Home() {
             Portofolio ini menampilkan berbagai proyek, karya, dan pengalaman
             saya dalam belajar serta mengembangkan teknologi.
           </p>
-          <div className="hero-preview-card">
-            <img
-              src="/og-image.png"
-              alt="Screenshot of Dzamfbr portfolio"
-              className="hero-preview-image"
-            />
-          </div>
           <a href="#about" className="hero-cta-link">
             Lihat Aku ➔
           </a>
@@ -447,7 +440,9 @@ export default function Home() {
             <h2 className="contact-headline reveal">
               <span className="headline-grotesk">Let&apos;s</span>
               <br />
-              <span className="headline-serif headline-serif--build">build</span>
+              <span className="headline-serif headline-serif--build">
+                build
+              </span>
               <br />
               <span className="headline-grotesk headline-grotesk--together">
                 together.

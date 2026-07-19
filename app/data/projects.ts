@@ -16,9 +16,9 @@ export const personalProjects: Project[] = [
     title: "Portfolio of Dzamfbr",
     description:
       "Website portofolio pribadi yang menampilkan profil, keterampilan, dan berbagai proyek yang telah saya kerjakan dengan desain modern, responsif, dan interaktif.",
-    image: "/screenshoot_portofolio_dzamfbr.png",
-    demo: "https://example.com/brisurfcare",
-    createdAt: "2025-12-05",
+    image: "/screenshoot_portofolio_web_dzamfbr.png",
+    demo: "https://dzamfbr-portfolio.vercel.app",
+    createdAt: "2026-07-19",
   },
 ];
 
