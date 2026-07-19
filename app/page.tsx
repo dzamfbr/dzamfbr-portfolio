@@ -456,6 +456,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="site-footer-inner">
+          <div className="footer-brand">
+            <p className="footer-copy">© 2026 Dzamfbr-dev</p>
+            <p className="footer-note">Built with care — Jakarta, Indonesia</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

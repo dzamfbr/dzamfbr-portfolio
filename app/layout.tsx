@@ -44,12 +44,21 @@ export const metadata: Metadata = {
     siteName: "Dzamfbr Portfolio",
     locale: "id_ID",
     type: "website",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Dzamfbr portfolio landing page screenshot",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dzamfbr | Dimas Azzam - Portfolio Web Developer Indonesia",
     description:
       "Portfolio resmi Dzamfbr dan Dimas Azzam sebagai Web Developer Indonesia.",
+    images: [`${siteUrl}/og-image.png`],
   },
   icons: {
     icon: "/logo_dzamfbr.png",
@@ -67,6 +76,7 @@ const personSchema = {
   jobTitle: "Web Developer",
   description:
     "Web Developer dan programmer Indonesia yang fokus pada pengembangan website modern, UI/UX, dan teknologi frontend.",
+  image: `${siteUrl}/logo_dzamfbr.png`,
   sameAs: [
     "https://www.instagram.com/dzamfbr/",
     "https://github.com",

@@ -14,14 +14,10 @@ const initialValues: ContactFormData = {
   message: "",
 };
 
-type StatusType = "idle" | "success" | "error";
-
 export default function ContactForm() {
   // Tracks the current input values for the contact form.
   const [values, setValues] = useState<ContactFormData>(initialValues);
   const [errors, setErrors] = useState<Partial<ContactFormErrors>>({});
-  const [status, setStatus] = useState<StatusType>("idle");
-  const [statusMessage, setStatusMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (
@@ -31,9 +27,8 @@ export default function ContactForm() {
     setValues((current) => ({ ...current, [field]: event.target.value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
 
-    if (status !== "idle") {
-      setStatus("idle");
-      setStatusMessage("");
+    if (errors.name || errors.email || errors.subject || errors.message) {
+      setErrors((current) => ({ ...current }));
     }
   };
 
@@ -47,14 +42,10 @@ export default function ContactForm() {
     const validationErrors = validateContactForm(values);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      setStatus("error");
-      setStatusMessage("Please fix the highlighted fields and try again.");
       return;
     }
 
     setIsLoading(true);
-    setStatus("idle");
-    setStatusMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -70,19 +61,12 @@ export default function ContactForm() {
         throw new Error(data?.error || "Unable to send your message.");
       }
 
-      // Show a success notification and clear the form fields.
-      setStatus("success");
-      setStatusMessage(
-        "Thank you! Your message has been sent successfully. I'll get back to you as soon as possible.",
-      );
       setValues(initialValues);
       setErrors({});
     } catch (error) {
-      setStatus("error");
-      setStatusMessage(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again later.",
+      console.error(
+        "Contact form submission failed:",
+        error instanceof Error ? error.message : error,
       );
     } finally {
       setIsLoading(false);
@@ -186,16 +170,6 @@ export default function ContactForm() {
           </p>
         ) : null}
       </div>
-
-      {status !== "idle" ? (
-        <div
-          className={`form-status form-status--${status}`}
-          role="status"
-          aria-live="polite"
-        >
-          {statusMessage}
-        </div>
-      ) : null}
 
       <button type="submit" className="form-submit" disabled={isLoading}>
         {isLoading ? "Sending..." : "Send Message →"}
