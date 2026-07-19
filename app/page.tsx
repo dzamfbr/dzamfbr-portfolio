@@ -178,7 +178,7 @@ export default function Home() {
 
             {/* GitHub */}
             <a
-              href="https://github.com"
+              href="https://github.com/dzamfbr"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-social-link"
@@ -445,7 +445,7 @@ export default function Home() {
               </span>
               <br />
               <span className="headline-grotesk headline-grotesk--together">
-                together.
+                together
               </span>
             </h2>
 
@@ -461,9 +461,23 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="site-footer-inner">
-          <div className="footer-brand">
-            <p className="footer-copy">© 2026 Dzamfbr-dev</p>
-            <p className="footer-note">Built with care — Jakarta, Indonesia</p>
+          <div className="footer-side footer-side--left">
+            <p className="footer-copy">
+              © 2026 Dimas Azzam. All rights reserved.
+            </p>
+          </div>
+
+          <a
+            href="https://dzamfbr.my.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-center"
+          >
+            dzamfbr.my.id
+          </a>
+
+          <div className="footer-side footer-side--right">
+            <p className="footer-note">Built with ♥ from Space</p>
           </div>
         </div>
       </footer>

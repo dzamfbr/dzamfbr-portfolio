@@ -5,12 +5,16 @@ const siteUrl = "https://dzamfbr.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "8JH4wtQG9lL6ChQ37hgPrrYi9uVAkmJXCXCOQYaNSRI",
+  },
   title: {
-    default: "Dzamfbr | Dimas Azzam - Portfolio Web Developer Indonesia",
+    default:
+      "Dzamfbr — Portfolio of a Web Developer & Programmer based in Indonesia.",
     template: "%s | Dzamfbr",
   },
   description:
-    "Portfolio resmi Dzamfbr dan Dimas Azzam sebagai Web Developer Indonesia. Menampilkan proyek web modern, Next.js, React, UI/UX, JavaScript, dan karya pengembangan aplikasi.",
+    "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
   keywords: [
     "dzamfbr",
     "dimas azzam",
@@ -37,9 +41,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Dzamfbr | Dimas Azzam - Portfolio Web Developer Indonesia",
+    title:
+      "Dzamfbr — Portfolio of a Web Developer & Programmer based in Indonesia.",
     description:
-      "Portfolio resmi Dzamfbr dan Dimas Azzam sebagai Web Developer Indonesia dengan proyek modern dan pengalaman di bidang teknologi.",
+      "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
     url: siteUrl,
     siteName: "Dzamfbr Portfolio",
     locale: "id_ID",
@@ -49,15 +54,16 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Dzamfbr portfolio landing page screenshot",
+        alt: "Dzamfbr portfolio landing page",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dzamfbr | Dimas Azzam - Portfolio Web Developer Indonesia",
+    title:
+      "Dzamfbr — Portfolio of a Web Developer & Programmer based in Indonesia.",
     description:
-      "Portfolio resmi Dzamfbr dan Dimas Azzam sebagai Web Developer Indonesia.",
+      "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
   },
   icons: {
     icon: "/logo_dzamfbr.png",
@@ -74,12 +80,12 @@ const personSchema = {
   url: siteUrl,
   jobTitle: "Web Developer",
   description:
-    "Web Developer dan programmer Indonesia yang fokus pada pengembangan website modern, UI/UX, dan teknologi frontend.",
+    "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
   image: `${siteUrl}/logo_dzamfbr.png`,
   sameAs: [
     "https://www.instagram.com/dzamfbr/",
-    "https://github.com",
-    "https://youtube.com",
+    "https://github.com/dzamfbr",
+    "https://www.youtube.com/@rayoonn_5",
   ],
 };
 
