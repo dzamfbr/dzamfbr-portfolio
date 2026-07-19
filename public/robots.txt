@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dzamfbr.vercel.app/sitemap.xml
+Sitemap: https://dzamfbr-portfolio.vercel.app/sitemap.xml
