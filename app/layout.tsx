@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/icon_web_dzamfbr.png`,
+        url: `${siteUrl}/logo_dzamfbr.png`,
         width: 1200,
         height: 630,
         alt: "Dzamfbr portfolio landing page",
