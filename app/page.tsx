@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import ContactForm from "./components/ContactForm";
-import LiquidNavigation from "./components/LiquidNavigation";
-import ProjectsShowcase from "./components/ProjectsShowcase";
+import ContactForm from "../components/sections/ContactForm";
+import LiquidNavigation from "../components/sections/LiquidNavigation";
+import ProjectsShowcase from "../components/sections/ProjectsShowcase";
 
 export default function Home() {
   const marqueeItems = [

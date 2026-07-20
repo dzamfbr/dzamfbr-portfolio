@@ -6,7 +6,7 @@ import {
   personalProjects,
   commercialProjects,
   Project,
-} from "../data/projects";
+} from "../../app/data/projects";
 
 const TABS = [
   { id: "personal", label: "Personal Projects" },
