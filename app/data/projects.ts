@@ -23,16 +23,6 @@ export const personalProjects: Project[] = [
 ];
 
 // Commercial projects: GitHub link is intentionally omitted for client work.
-export const commercialProjects: Project[] = [
-  {
-    id: "commercial-portfolio-01",
-    title: "Portfolio of Dzamfbr",
-    description:
-      "Website portofolio pribadi yang menampilkan profil, keterampilan, dan berbagai proyek yang telah saya kerjakan dengan desain modern, responsif, dan interaktif.",
-    image: "/screenshoot_portofolio_web_dzamfbr.png",
-    demo: "https://dzamfbr-portfolio.vercel.app",
-    createdAt: "2026-07-15",
-  },
-];
+export const commercialProjects: Project[] = [];
 
 export default { personalProjects, commercialProjects };
