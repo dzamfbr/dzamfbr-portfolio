@@ -58,7 +58,7 @@ export async function POST(request: Request) {
       to: payload.email,
       subject: "Thanks for contacting Dimas Azzam",
       html: getAutoReplyEmailHtml(payload.name),
-      text: `Hi ${payload.name},\n\nThank you for contacting me through my portfolio website. I have successfully received your message and will review it as soon as possible. I'll get back to you as soon as I can.\n\nBest regards,\n\nDimas Azzam\nFrontend Developer\n${process.env.SITE_URL ?? "https://your-domain.com"}`,
+      text: `Hi ${payload.name},\n\nThank you for contacting me through my portfolio website. I have successfully received your message and will review it as soon as possible. I'll get back to you as soon as I can.\n\nBest regards,\n\nDimas Azzam\nFrontend Developer\n${process.env.SITE_URL ?? "https://dzamfbr-portfolio.vercel.app/"}`,
     });
 
     return NextResponse.json({ ok: true });

@@ -242,10 +242,8 @@ export default function Home() {
           </h2>
           <div className="about-description">
             <p>
-              Perkenalkan saya <strong>Dimas Azzam</strong> atau{" "}
-              <strong>Dzamfbr</strong>, siswa jurusan{" "}
-              <strong>Sistem Informasi Jaringan dan Aplikasi (SIJA)</strong> di{" "}
-              <strong>SMKN 1 Jakarta</strong> yang berfokus pada{" "}
+              Perkenalkan saya <strong>Dimas Azzam</strong>, siswa di{" "}
+              <strong>SMK Negeri 1 Jakarta</strong> yang berfokus pada{" "}
               <strong>Software Development</strong> dan{" "}
               <strong>Web Development</strong>. Saya memiliki ketertarikan dalam
               membangun aplikasi dan website modern yang mengutamakan performa,

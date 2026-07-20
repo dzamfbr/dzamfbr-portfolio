@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://dzamfbr.vercel.app";
+const siteUrl = "https://dzamfbr-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: `${siteUrl}/icon_web_dzamfbr.png`,
         width: 1200,
         height: 630,
         alt: "Dzamfbr portfolio landing page",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
       "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
   },
   icons: {
-    icon: "/logo_dzamfbr.png",
-    shortcut: "/logo_dzamfbr.png",
-    apple: "/logo_dzamfbr.png",
+    icon: "/icon_web_dzamfbr.png",
+    shortcut: "/icon_web_dzamfbr.png",
+    apple: "/icon_web_dzamfbr.png",
   },
 };
 
@@ -102,6 +102,9 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        <link rel="icon" href="/logo_dzamfbr.png" />
+        <link rel="shortcut icon" href="/logo_dzamfbr.png" />
+        <link rel="apple-touch-icon" href="/logo_dzamfbr.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

@@ -49,7 +49,6 @@ export function validateContactForm(
 
 // Build HTML content for the notification email sent to the portfolio owner.
 export function getNotificationEmailHtml(values: ContactFormData) {
-  const portfolioUrl = process.env.SITE_URL ?? "https://dzamfbr.vercel.app";
   const submittedAt = new Date().toLocaleString("id-ID", {
     day: "2-digit",
     month: "long",
@@ -100,7 +99,7 @@ export function getNotificationEmailHtml(values: ContactFormData) {
           <p style="margin: 0 0 8px; font-size: 14px; color: #4b5563;">Reply directly to this email to respond to ${escapeHtml(values.name)}.</p>
           <p style="margin: 0; font-size: 14px; color: #4b5563;">
             Portfolio<br />
-            <a href="${portfolioUrl}" style="color: #2563eb; text-decoration: none;">${portfolioUrl}</a>
+            <a href="https://dzamfbr-portfolio.vercel.app" style="color: #2563eb; text-decoration: none;">https://dzamfbr-portfolio.vercel.app</a>
           </p>
         </div>
       </div>
@@ -110,8 +109,6 @@ export function getNotificationEmailHtml(values: ContactFormData) {
 
 // Build a simple autoresponder email for the visitor.
 export function getAutoReplyEmailHtml(name: string) {
-  const portfolioUrl = process.env.SITE_URL ?? "https://dzamfbr.vercel.app";
-
   return `
     <div style="font-family: Arial, sans-serif; color: #111; line-height: 1.6;">
       <p>Hi ${escapeHtml(name)},</p>
@@ -119,7 +116,7 @@ export function getAutoReplyEmailHtml(name: string) {
       <p>I have successfully received your message and will review it as soon as possible.</p>
       <p>I'll get back to you as soon as I can.</p>
       <p>Best regards,</p>
-      <p><strong>Dimas Azzam</strong><br />Frontend Developer<br /><a href="${portfolioUrl}" style="color: #2563eb; text-decoration: none;">${portfolioUrl}</a></p>
+      <p><strong>Dimas Azzam</strong><br />Frontend Developer<br /><a href="https://dzamfbr-portfolio.vercel.app" style="color: #2563eb; text-decoration: none;">https://dzamfbr-portfolio.vercel.app</a></p>
     </div>
   `;
 }
