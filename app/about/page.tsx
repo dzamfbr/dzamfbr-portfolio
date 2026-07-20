@@ -21,9 +21,9 @@ export default function AboutPage() {
     <main style={{ padding: "2rem", maxWidth: "900px", margin: "0 auto" }}>
       <h1>Tentang Dzamfbr</h1>
       <p>
-        Saya adalah Dimas Azzam, dikenal juga sebagai Dzamfbr, seorang web
-        developer dan programmer dari Indonesia yang fokus membangun website dan
-        aplikasi modern dengan performa dan pengalaman pengguna terbaik.
+        Saya adalah Dimas Azza, seorang web developer dan programmer dari
+        Indonesia yang fokus membangun website dan aplikasi modern dengan
+        performa dan pengalaman pengguna terbaik.
       </p>
       <p>
         Portofolio ini menampilkan karya, pengalaman, dan perjalanan saya dalam
