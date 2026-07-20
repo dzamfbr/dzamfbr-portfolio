@@ -24,10 +24,12 @@ export default function Home() {
   ];
   const aboutRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
   const scrollYRef = useRef(0);
   const scrollDirectionRef = useRef<"down" | "up">("down");
   const [aboutInView, setAboutInView] = useState(false);
   const [experienceInView, setExperienceInView] = useState(false);
+  const [contactInView, setContactInView] = useState(false);
   const [emailTooltipOpen, setEmailTooltipOpen] = useState(false);
   const [projectsTab, setProjectsTab] = useState("personal");
 
@@ -94,6 +96,33 @@ export default function Home() {
             setExperienceInView(true);
           } else if (scrollDirectionRef.current === "up") {
             setExperienceInView(false);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const node = contactRef.current;
+
+    if (!node) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setContactInView(true);
+          } else if (scrollDirectionRef.current === "up") {
+            setContactInView(false);
           }
         });
       },
@@ -363,10 +392,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section (replaced with new showcase) */}
-      <ProjectsShowcase
-        selectedTab={projectsTab}
-        onTabChange={setProjectsTab}
-      />
+      <ProjectsShowcase showAll={false} />
 
       <section
         id="experience"
@@ -430,11 +456,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="contact-section">
+      <section
+        id="contact"
+        ref={contactRef}
+        className={`contact-section ${contactInView ? "animate-in" : "animate-out"}`}
+      >
         <div className="contact-inner">
           <div className="contact-left">
-            <div className="section-label small reveal">GET IN TOUCH</div>
-
             <h2 className="contact-headline reveal">
               <span className="headline-grotesk">Let&apos;s</span>
               <br />
@@ -451,7 +479,6 @@ export default function Home() {
           </div>
 
           <div className="contact-right reveal">
-            <div className="section-label small">SEND A MESSAGE</div>
             <ContactForm />
           </div>
         </div>

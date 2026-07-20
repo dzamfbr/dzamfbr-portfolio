@@ -12,8 +12,8 @@ export type Project = {
 // Personal projects: easiest way to add is push a new object here.
 export const personalProjects: Project[] = [
   {
-    id: "p1",
-    title: "Portfolio of Dzamfbr",
+    id: "personal-portfolio-01",
+    title: "Portfolio of Dzamfbr 1",
     description:
       "Website portofolio pribadi yang menampilkan profil, keterampilan, dan berbagai proyek yang telah saya kerjakan dengan desain modern, responsif, dan interaktif.",
     image: "/screenshoot_portofolio_web_dzamfbr.png",
@@ -23,6 +23,16 @@ export const personalProjects: Project[] = [
 ];
 
 // Commercial projects: GitHub link is intentionally omitted for client work.
-export const commercialProjects: Project[] = [];
+export const commercialProjects: Project[] = [
+  {
+    id: "commercial-portfolio-01",
+    title: "Portfolio of Dzamfbr",
+    description:
+      "Website portofolio pribadi yang menampilkan profil, keterampilan, dan berbagai proyek yang telah saya kerjakan dengan desain modern, responsif, dan interaktif.",
+    image: "/screenshoot_portofolio_web_dzamfbr.png",
+    demo: "https://dzamfbr-portfolio.vercel.app",
+    createdAt: "2026-07-15",
+  },
+];
 
 export default { personalProjects, commercialProjects };
