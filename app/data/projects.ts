@@ -13,7 +13,7 @@ export type Project = {
 export const personalProjects: Project[] = [
   {
     id: "personal-portfolio-01",
-    title: "Portfolio of Dzamfbr 1",
+    title: "Portfolio of Dzamfbr",
     description:
       "Website portofolio pribadi yang menampilkan profil, keterampilan, dan berbagai proyek yang telah saya kerjakan dengan desain modern, responsif, dan interaktif.",
     image: "/screenshoot_portofolio_web_dzamfbr.png",
