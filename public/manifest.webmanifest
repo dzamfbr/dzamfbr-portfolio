@@ -1,0 +1,21 @@
+{
+  "name": "Dzamfbr Portfolio",
+  "short_name": "Dzamfbr",
+  "description": "Portofolio resmi Dimas Azzam sebagai web developer dan programmer dari Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/logo_dzamfbr.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo_dzamfbr.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

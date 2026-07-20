@@ -3,9 +3,10 @@ import "./globals.css";
 
 const siteUrl = "https://dzamfbr-portfolio.vercel.app";
 const siteName = "Dzamfbr Portfolio";
-const siteTitle = "Dzamfbr | IT Programmer and Developer, based in Indonesia.";
+const siteTitle =
+  "Dzamfbr Portfolio | Web Developer & Programmer from Indonesia";
 const siteDescription =
-  "Portfolio resmi Dimas Azzam (Dzamfbr) sebagai web developer dan programmer berbasis di Indonesia, menampilkan karya, skill, dan pengalaman teknologi.";
+  "Dzamfbr Portfolio adalah portofolio resmi Dimas Azzam sebagai web developer dan programmer berbasis di Indonesia, menampilkan karya, skill, dan pengalaman teknologi.";
 const defaultImage = `${siteUrl}/screenshoot_portofolio_web_dzamfbr.png`;
 const logoUrl = `${siteUrl}/logo_dzamfbr.png`;
 
@@ -29,7 +30,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dimas Azzam", url: siteUrl }],
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
+    languages: {
+      id: "/",
+    },
   },
   robots: {
     index: true,
@@ -64,13 +68,25 @@ export const metadata: Metadata = {
     description: siteDescription,
     creator: "@dzamfbr",
     site: "@dzamfbr",
+    images: [
+      {
+        url: defaultImage,
+        alt: "Dzamfbr Portfolio preview",
+      },
+    ],
   },
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
       { url: "/logo_dzamfbr.png", type: "image/png", sizes: "any" },
     ],
+    shortcut: "/favicon.ico",
     apple: [{ url: "/logo_dzamfbr.png", type: "image/png", sizes: "180x180" }],
+  },
+  manifest: "/manifest.webmanifest",
+  other: {
+    "theme-color": "#0f172a",
+    "msapplication-TileColor": "#0f172a",
   },
   verification: {
     google: "8JH4wtQG9lL6ChQ37hgPrrYi9uVAkmJXCXCOQYaNSRI",
@@ -85,14 +101,19 @@ const websiteSchema = {
   url: siteUrl,
   inLanguage: "id-ID",
   description: siteDescription,
+  publisher: {
+    "@id": `${siteUrl}/#organization`,
+  },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
   name: siteName,
   url: siteUrl,
   logo: logoUrl,
+  description: siteDescription,
   sameAs: [
     "https://www.instagram.com/dzamfbr/",
     "https://github.com/dzamfbr",
@@ -113,6 +134,48 @@ const personSchema = {
     "https://www.instagram.com/dzamfbr/",
     "https://github.com/dzamfbr",
     "https://www.youtube.com/@rayoonn_5",
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: siteTitle,
+  url: siteUrl,
+  description: siteDescription,
+  inLanguage: "id-ID",
+  isPartOf: {
+    "@id": `${siteUrl}/#website`,
+  },
+  about: {
+    "@id": `${siteUrl}/#organization`,
+  },
+  primaryImageOfPage: {
+    "@id": `${siteUrl}/#primaryimage`,
+  },
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: `About ${siteName}`,
+  url: siteUrl,
+  description: siteDescription,
+  mainEntity: {
+    "@id": `${siteUrl}/#person`,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
   ],
 };
 
@@ -141,6 +204,18 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
