@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/logo_dzamfbr.png`,
+        url: `${siteUrl}/screenshoot_portofolio_web_dzamfbr.png`,
         width: 1200,
         height: 630,
         alt: "Dzamfbr portfolio landing page",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
       "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
   },
   icons: {
-    icon: "/icon_web_dzamfbr.png",
-    shortcut: "/icon_web_dzamfbr.png",
-    apple: "/icon_web_dzamfbr.png",
+    icon: "/logo_dzamfbr.png",
+    shortcut: "/logo_dzamfbr.png",
+    apple: "/logo_dzamfbr.png",
   },
 };
 
@@ -78,7 +78,7 @@ const personSchema = {
   jobTitle: "Web Developer",
   description:
     "Portfolio resmi Dimas Azzam sebagai seorang yang terus berkembang dalam membangun keterampilan di bidang pengembangan web, pemrograman, dan teknologi.",
-  image: `${siteUrl}/logo_dzamfbr.png`,
+  image: `${siteUrl}screenshoot_portofolio_web_dzamfbr.png`,
   sameAs: [
     "https://www.instagram.com/dzamfbr/",
     "https://github.com/dzamfbr",
