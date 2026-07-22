@@ -36,6 +36,7 @@
   --icon-color: rgba(0, 78, 152, 0.76);
   --icon-active: #ffffff;
   --divider: rgba(0, 78, 152, 0.22);
+  --section-padding-inline: 1.5rem;
 }
 
 @theme inline {
@@ -427,7 +428,8 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   z-index: 10;
-  padding: 60px 0;
+  padding: 60px var(--section-padding-inline);
+  box-sizing: border-box;
 }
 
 .hero-col-left {
@@ -763,8 +765,9 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
-  padding: 120px 0;
+  padding: 120px var(--section-padding-inline);
   z-index: 10;
+  box-sizing: border-box;
   opacity: 0;
   transform: translateY(40px);
   transition:
@@ -1277,8 +1280,9 @@ a {
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
-  padding: 40px 24px;
+  padding: 40px var(--section-padding-inline);
   border-radius: 16px;
+  box-sizing: border-box;
 }
 
 /* Animate like About section: fade/slide in/out */
@@ -1690,7 +1694,8 @@ a {
   width: 100%;
   max-width: 1200px;
   margin: 40px auto 0;
-  padding: 80px 18px;
+  padding: 80px var(--section-padding-inline);
+  box-sizing: border-box;
 }
 
 .experience-section.animate-in {
@@ -1845,6 +1850,8 @@ a {
 .contact-section {
   width: 100%;
   max-width: 1200px;
+  padding: 80px var(--section-padding-inline);
+  box-sizing: border-box;
   opacity: 0;
   transform: translateY(40px);
   transition:
