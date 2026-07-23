@@ -1615,6 +1615,13 @@ a {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  .project-tabs {
+    gap: 0.5rem;
+  }
+  .project-tab {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+  }
 }
 
 .projects-footer {
@@ -1687,6 +1694,18 @@ a {
   }
   .projects-container {
     padding: 18px;
+  }
+  .project-tabs {
+    gap: 0.4rem;
+    padding: 0.2rem;
+  }
+  .project-tab {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
+  .project-review-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1980,6 +1999,7 @@ a {
 .headline-grotesk--together {
   display: block;
   margin-top: 0.05em;
+  white-space: nowrap;
 }
 
 .contact-right .section-label.small {
